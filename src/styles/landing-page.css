@@ -1,0 +1,67 @@
+.hero-text {
+    font-family: oatmeal-pro-regular;
+    z-index: 10;
+    position: absolute;
+    left: 18%;
+    right: 20%;
+    font-size: 30px;
+}
+.hero-text-container {
+    display: flex;
+    justify-content: center;
+}
+
+.landing-page-container {
+    position: absolute;
+    /* top: 0; */
+    width: 100%;
+}
+
+.arrow {
+    width: 60px;
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.landing-page-container h1 {
+    font-size: 80px;
+    font-family: oatmeal-pro-bold;
+    margin-bottom: 1rem;
+}
+
+.landing-page-container h2 {
+    font-size: 20px;
+    font-family: oatmeal-pro-regular;
+    margin-bottom: 1.5rem;
+}
+
+.input-container input {
+    padding: 1rem;
+    border: none;
+    box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45), inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+    border-radius: 1rem;
+    font-family: oatmeal-pro-thin;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-container input:hover {
+    transform: scale(1.2);
+}
