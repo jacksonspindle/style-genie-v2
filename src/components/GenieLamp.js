@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF, Environment } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
 import { useFrame, useThree } from "@react-three/fiber";
@@ -20,9 +20,9 @@ export default function Model({ ...props }) {
     }
   });
 
-  const springs = useSpring({
-    position: props.landing ? [0, 4, 0] : [0, 0, 0],
-  });
+  // const springs = useSpring({
+  //   position: props.landing ? [0, 4, 0] : [0, 0, 0],
+  // });
 
   const { position } = useSpring({
     position: props.landing ? [0, 4, 0] : [0, 0, 0],
