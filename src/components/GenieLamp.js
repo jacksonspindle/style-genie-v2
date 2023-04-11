@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 
 import { useGLTF, Environment } from "@react-three/drei";
@@ -22,11 +21,9 @@ export default function Model({ ...props }) {
     }
   });
 
-
   // const springs = useSpring({
   //   position: props.landing ? [0, 4, 0] : [0, 0, 0],
   // });
-
 
   const { position } = useSpring({
     position: props.landing ? [0, 4, 0] : [0, 0, 0],

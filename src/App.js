@@ -1,16 +1,29 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useAnimation,
+  useScroll,
+} from "framer-motion";
 import GenieLamp from "./components/GenieLamp";
 import LandingPage from "./components/LandingPage";
 import "./styles/landing-page.css";
 import arrow from "./arrow.png";
+import Hoodie from "./components/Hoodie";
 
 const App = () => {
   const [landing, setLanding] = useState(false);
+  const [scroll, setScroll] = useState(0);
 
   const controls = useAnimation();
+  const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    scrollYProgress.onChange((v) => setScroll(v));
+    console.log(scroll);
+  }, [scrollYProgress, scroll]);
 
   useEffect(() => {
     controls.start({
@@ -20,7 +33,7 @@ const App = () => {
     });
   }, [controls]);
   return (
-    <div className="canvas">
+    <div>
       <AnimatePresence>
         {landing === false ? (
           <motion.div className="hero-text">
@@ -54,12 +67,12 @@ const App = () => {
       >
         <Canvas>
           <GenieLamp state={setLanding} landing={landing} />
-
-          <OrbitControls enableZoom={false} />
+          <Hoodie scroll={scroll} landing={landing} />
+          {/* <OrbitControls  enableZoom={false} /> */}
         </Canvas>
       </motion.div>
 
-      <LandingPage active={landing} />
+      <LandingPage scroll={scroll} active={landing} />
     </div>
   );
 };
